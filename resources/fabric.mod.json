@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "optisine",
+	"name": "OptiSine",
+	"description": "More reliable than OptiFabric™",
+	"version": "1",
+	"authors": [
+		"Chocohead"
+	],
+	"contact": {
+		"sources": "https://github.com/Chocohead/OptiSine",
+		"issues": "https://github.com/Chocohead/OptiSine/issues"
+	},
+	"license": "MPL-2.0",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.4.0"
+	},
+	"mixins": [
+	]
+}
