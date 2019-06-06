@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+    	jcenter()
+		maven {
+	        name = "Fabric"
+	        url = "https://maven.fabricmc.net/"
+        }
+		maven {
+			name = "Forge"
+			url = "https://files.minecraftforge.net/maven/"
+		}
+		maven { 
+			name = "Jitpack"
+			url 'https://jitpack.io/'
+		}
+	}
+	dependencies {
+        classpath 'com.github.Chocohead:fabric-loom:590062b'
+	}
+}
+
+apply plugin: "fabric-loom"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+archivesBaseName = "OptiSine"
+version = "1.0"
+
+dependencies {
+	def mcVersion = "1.14.3-pre1"
+	def mapping = "$mcVersion+build.3"
+
+	minecraft "com.mojang:minecraft:$mcVersion"
+	mappings "net.fabricmc:yarn:$mapping:enigma@zip"
+	implementation "net.fabricmc:yarn:$mapping"
+
+	modCompile "net.fabricmc:fabric-loader:0.4.8+build.154"
+	modCompile "net.fabricmc:fabric:0.3.0+build.176"
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir = ['src']
+		}
+		resources {
+			srcDir = ['resources']
+		}
+	}
+}
